@@ -1,0 +1,5 @@
+export type Severity = 'critical' | 'high' | 'medium' | 'low' | 'info';
+export interface Project { id: string; name: string; website_url: string | null; github_repository_url: string | null; analysis_type: 'website' | 'github' | 'full'; created_at: string; scans?: { id: string; status: string; created_at: string; findings: { count: number }[] }[] }
+export interface Scan { id: string; project_id: string; status: 'queued' | 'running' | 'completed' | 'partial' | 'failed' | 'cancelled'; current_stage: string | null; progress: number; started_at: string | null; error_message: string | null }
+export interface Finding { id: string; category: string; title: string; description: string; severity: Severity; confidence: 'high' | 'medium' | 'low'; evidence: string; affected_resource: string | null; suggested_fix: string; status: string }
+export interface Results { scan: Scan; project: Project; report: { summary: string; scores: Record<string, number | null>; report_data: { errors?: string[]; facts?: Record<string, any> } } | null; findings: Finding[]; recommendations: { id: string; title: string; description: string; priority: string; status: string }[] }

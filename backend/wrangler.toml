@@ -1,0 +1,5 @@
+name = "codemint-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+# Secrets: wrangler secret put SUPABASE_URL / SUPABASE_ANON_KEY / SUPABASE_SERVICE_ROLE_KEY
+# Optional: GITHUB_TOKEN, PAGESPEED_API_KEY, AI_API_KEY, AI_MODEL, FRONTEND_URL
