@@ -21,11 +21,3 @@ Website + GitHub repository intelligence. React/Vite/Tailwind frontend, Cloudfla
 ## Implemented
 Landing page, email + Google auth, protected routes, project create/list/rename/delete, SSRF-safe website engine (headers, SEO, a11y, robots/sitemap, PageSpeed), GitHub engine (metadata, tree, deps, TODOs, tests/docs), persisted scan status with polling, partial-failure handling, findings with evidence/confidence, status updates, copyable fix prompts, RLS on all tables.
 
-## NOT yet implemented (honest list)
-- AI summary / AI-written recommendations and fix prompts (prompts are template-based; `AI_*` vars unused)
-- PDF export, Settings page, notifications UI, charts, analysis history tab, report tabs, combined cross-referencing section, account deletion
-- GitHub Advisory lookups (reported as "not checked"), TLS certificate inspection, broken-link and contrast checks, multi-page crawl
-- Scans run via `ctx.waitUntil`, which Cloudflare limits in duration. For production move to Cloudflare Queues or Durable Objects.
-- DNS-rebinding protection is partial (DoH check before fetch; Workers cannot pin IPs).
-- Rate limiting is per-isolate; add Cloudflare rate-limit rules.
-- Not compiled or tested yet: run `npm run typecheck` (backend) and `npm run build` (frontend) first.
